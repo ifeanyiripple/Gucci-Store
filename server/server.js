@@ -1,10 +1,10 @@
-//gucci Red Air: price_1No957ILukUQPtjZ1xLq3FwO
-// Brown Gucci Jordan: price_1No9B5ILukUQPtjZ33MOpWTY
-// Air Jordan Blue: price_1No9G1ILukUQPtjZbYVV6t3C
-// Gucci Bee Jordan shoe: price_1No9ImILukUQPtjZYXeLp9LA
-//
+
+
+require('dotenv').config()
 const express = require('express');
 var cors = require('cors');
+const PORT = process.env.PORT || 4000;
+
 const stripe = require('stripe')('sk_test_51No8IiILukUQPtjZSodKqTZbDpuWmEIYuBhMMbZu9Jzoj2voRWUwq8cilexhRHoXA6QYSpXMq2gy5bnTcxQg8VjC00uNrZfEBS');
 
 const app = express();
@@ -40,4 +40,5 @@ app.post("/checkout", async (req, res) => {
 });
 
 
-app.listen(4000, () => console.log("listening on port 4000"))
+app.listen(PORT, () => {
+ console.log(`listening  at http://localhost:${PORT}`) });
